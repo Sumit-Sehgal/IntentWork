@@ -34,9 +34,9 @@ class NewPage : AppCompatActivity() {
             stg = it.getStringExtra("string").toString()
             num = it.getIntExtra("number",0)
             chr = it.getCharExtra("char",'a')
-            lng = it.getLongExtra("lng",0)
-            db= it.getDoubleExtra("db",0.0)
-            floats = it.getFloatExtra("floats",0.0F)
+            lng = it.getLongExtra("long",0)
+            db= it.getDoubleExtra("double",0.0)
+            floats = it.getFloatExtra("Float",0.0F)
 //            bool = it.getBooleanExtra("bool",true)
         }
         getstg.setText(stg)
