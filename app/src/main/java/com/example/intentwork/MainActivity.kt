@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 
 class MainActivity : AppCompatActivity() {
     lateinit var stg:EditText
@@ -13,7 +15,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var db:EditText
     lateinit var lng:EditText
     lateinit var floats:EditText
-    lateinit var bool:EditText
+    lateinit var boolt:RadioButton
+    lateinit var boolf:RadioButton
     lateinit var btn:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         db=findViewById(R.id.db)
         lng=findViewById(R.id.lng)
         floats=findViewById(R.id.floats)
-        bool=findViewById(R.id.bool)
+        boolt=findViewById(R.id.boolt)
+        boolf=findViewById(R.id.boolf)
         btn=findViewById(R.id.btn)
         btn.setOnClickListener {
             var intent=Intent(this,NewPage::class.java)
@@ -34,7 +38,12 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("double",(db.text.toString()).toDouble())
             intent.putExtra("long",(lng.text.toString()).toLong())
             intent.putExtra("Float",(floats.text.toString()).toFloat())
-//            intent.putExtra("bool",bool as Boolean)
+            if (boolt.isChecked==true) {
+                intent.putExtra("bool","true")
+            }
+            else{
+                intent.putExtra("bool", "false")
+            }
             startActivity(intent)
         }
 

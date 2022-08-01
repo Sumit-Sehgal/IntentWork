@@ -19,7 +19,7 @@ class NewPage : AppCompatActivity() {
     var lng:Long= 0
     var db:Double= 0.0
     var floats:Float= 0.0F
-//    var bool:Boolean=true
+    var bool:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_page)
@@ -29,7 +29,7 @@ class NewPage : AppCompatActivity() {
         getlng=findViewById(R.id.getlng)
         getdb=findViewById(R.id.getdb)
         getfloats=findViewById(R.id.getfloats)
-//        getbool=findViewById(R.id.getbool)
+        getbool=findViewById(R.id.getbool)
         intent?.let {
             stg = it.getStringExtra("string").toString()
             num = it.getIntExtra("number",0)
@@ -37,7 +37,7 @@ class NewPage : AppCompatActivity() {
             lng = it.getLongExtra("long",0)
             db= it.getDoubleExtra("double",0.0)
             floats = it.getFloatExtra("Float",0.0F)
-//            bool = it.getBooleanExtra("bool",true)
+            bool = it.getStringExtra("bool").toString()
         }
         getstg.setText(stg)
         getnum.setText(num.toString())
@@ -45,7 +45,7 @@ class NewPage : AppCompatActivity() {
         getlng.setText(""+lng.toString())
         getdb.setText(""+db.toString())
         getfloats.setText(""+floats.toString())
-//        getbool.setText(""+bool.toString())
+        getbool.setText(bool)
 
 
     }
