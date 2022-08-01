@@ -15,7 +15,7 @@ class NewPage : AppCompatActivity() {
     lateinit var getbool:TextView
     var stg:String = ""
     var num:Int=0
-    var chr:Char= 'a'
+    var chr:String= ""
     var lng:Long= 0
     var db:Double= 0.0
     var floats:Float= 0.0F
@@ -33,7 +33,7 @@ class NewPage : AppCompatActivity() {
         intent?.let {
             stg = it.getStringExtra("string").toString()
             num = it.getIntExtra("number",0)
-            chr = it.getCharExtra("char",'a')
+            chr = it.getStringExtra("char").toString()
             lng = it.getLongExtra("long",0)
             db= it.getDoubleExtra("double",0.0)
             floats = it.getFloatExtra("Float",0.0F)
